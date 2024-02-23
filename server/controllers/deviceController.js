@@ -35,7 +35,7 @@ class DeviceController {
     page = page || 1
     limit = limit || 9
     let offset = page * limit - limit
-    let device
+    let devices
     if (!brandId && !typeId) {
       devices = await Device.findAndCountAll({limit, offset})
     }
@@ -65,4 +65,4 @@ class DeviceController {
   }
 }
 
-module.exports = new brandController()
+module.exports = new DeviceController()
